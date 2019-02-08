@@ -42,18 +42,20 @@ namespace session.Logic.Repository
 
 		public async Task<IEnumerable<T>> FindAll(string storedProc, DynamicParameters parameters)
 		{
-			using (var conn = this.Connection)
+			try
 			{
+				var conn = this.Connection;
 				var model = await DapperORM<T>.ExecuteReturnList(conn, storedProc, parameters);
 
 				return model;
 			}
+			catch(Exception ex)
+			{
+				throw ex;
+			}
 		}
 
-		public Task<IEnumerable<T>> FindByEmail(string storedProc, DynamicParameters parameters)
-		{
-			throw new NotImplementedException();
-		}
+		
 
 		public Task<int> FindExecuteScalar(string storedProc, DynamicParameters parameters)
 		{

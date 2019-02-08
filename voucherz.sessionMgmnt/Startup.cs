@@ -46,7 +46,7 @@ namespace voucherz.sessionMgmnt
 			}
 			else
 			{
-				app.UseHsts();
+				//app.UseHsts();
 			}
 			app.UseCors(options => options
 			.AllowAnyOrigin()

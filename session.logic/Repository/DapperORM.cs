@@ -11,25 +11,41 @@ namespace session.Logic.Repository
 	{
 		public static async Task ExecuteWithoutReturn(IDbConnection connection, string Proc, DynamicParameters param)
 		{
-			using (var conn = connection)
+			try
 			{
-				conn.Open();
+				connection.Open();
 
-				await conn.QueryAsync<T>(Proc,
+				await connection.QueryAsync<T>(Proc,
 					param,
 					commandType: CommandType.StoredProcedure);
+			}
+			catch(Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				connection.Close();
 			}
 		}
 
 		public static Task<IEnumerable<T>> ExecuteReturnList(IDbConnection connection, string Proc, DynamicParameters param)
 		{
-			using (var conn = connection)
+			try
 			{
-				conn.Open();
+				connection.Open();
 
-				return conn.QueryAsync<T>(Proc,
+				return connection.QueryAsync<T>(Proc,
 					param,
 					commandType: CommandType.StoredProcedure);
+			}
+			catch(Exception ex)
+			{
+				throw ex;
+			}
+			finally
+			{
+				connection.Close();
 			}
 		}
 

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using session.Logic.ClientCommunication;
 using session.Logic.Domain;
 using session.Logic.Repository;
 using System;
@@ -121,6 +122,27 @@ namespace session.Logic.Services
 			var details = await _dao.FindAll("uspGetAllToken", parameters);
 
 			return details;
+		}
+
+		public async Task PostTrailActivity(TrailResponse response, string action)
+		{
+			TrailDomain trail;
+			trail = new TrailDomain("Redemption", "Redemption Microservice", action, response, DateTime.UtcNow);
+			//ensure you get the path to the microservice
+			await ClientConnection<TrailDomain>.CreateTrailAsync(trail,
+				string.Format("http://172.20.20.127:9000/voucherz/audittrails/{0}/{1}/{2}/{3}/{4}/{5}",
+				"Audit Trail", "Redemption Microservice", action, response._code, response._description, response._error));
+
+		}
+
+		public async Task<IEnumerable<AuthToken>> GetTokensByEmail(string email)
+		{
+			DynamicParameters parameters = new DynamicParameters();
+			parameters.Add("@email", email);
+
+			var findAllByEmail = await _dao.FindAll("uspGetAllTokenByEmail", parameters);
+
+			return findAllByEmail;
 		}
 	}
 }

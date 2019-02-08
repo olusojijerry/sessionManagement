@@ -13,5 +13,7 @@ namespace session.Logic.Services
 		Task<SessionSetup> GetSetup();
 		Task<AuthToken> GetTokenDetails(string token);
 		Task<IEnumerable<AuthToken>> GetAuthTokens();
+		Task PostTrailActivity(TrailResponse response, string eventName);
+		Task<IEnumerable<AuthToken>> GetTokensByEmail(string email);
 	}
 }

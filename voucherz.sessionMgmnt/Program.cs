@@ -20,6 +20,6 @@ namespace voucherz.sessionMgmnt
 		public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 			WebHost.CreateDefaultBuilder(args)
 				.UseStartup<Startup>()
-				.UseUrls("https://172.20.20.127:6001","http://172.20.20.127:6000");
+				.UseUrls("http://172.20.20.127:6000");
 	}
 }
