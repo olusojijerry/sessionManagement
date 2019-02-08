@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "voucherz.sessionMgmnt", "voucherz.sessionMgmnt\voucherz.sessionMgmnt.csproj", "{C9848BF3-EE59-4980-84A8-3789E0DE5083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "session.Logic", "session.logic\session.Logic.csproj", "{A701FD7C-45B5-4BB5-8F60-B75AA29A1EC3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9848BF3-EE59-4980-84A8-3789E0DE5083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9848BF3-EE59-4980-84A8-3789E0DE5083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9848BF3-EE59-4980-84A8-3789E0DE5083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9848BF3-EE59-4980-84A8-3789E0DE5083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A701FD7C-45B5-4BB5-8F60-B75AA29A1EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A701FD7C-45B5-4BB5-8F60-B75AA29A1EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A701FD7C-45B5-4BB5-8F60-B75AA29A1EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A701FD7C-45B5-4BB5-8F60-B75AA29A1EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0937FA17-83B8-465D-8BB5-285C24881494}
+	EndGlobalSection
+EndGlobal
